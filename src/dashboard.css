@@ -51,10 +51,10 @@ body{
     margin-top: 20px;
 }
 @media only screen and (max-width: 1000px){
-    .logo p{
+    .dashborad-menu .logo p{
         font-size: 26px;
     }
-.menu-list .hide-menu{
+ .hide-menu{
    font-size: 16px;
 }
 .books-container .card{
@@ -68,13 +68,13 @@ body{
         text-align: center;
         
     }
-    .logo p{
+    .dashborad-menu .logo p{
         display: none;
     }
     .fa-book-open-reader{
         display: block;
     }
-    .menu-list .hide-menu{
+     .hide-menu{
         display: none;
      }
      .dashboard-info{

@@ -1,0 +1,166 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+font-family: "Kanit", sans-serif;
+/* padding: 3% 5% ;
+background: #101115;
+height: 100vh; */
+}
+
+.navbar{
+    padding-bottom: 20px;
+}
+.menu p:hover{
+color: #FFF;
+border-bottom:  2px solid #673EDE;
+cursor: pointer;
+}
+
+.btns button{
+width: 140px;
+padding: 12px 24px;
+/* border: 1px solid red; */
+}
+
+.btn-active{
+background: #673EDE;
+color: #FFF;
+border-radius: 12px;
+}
+.side{
+top: 0;
+left: 0;
+width: 55%;
+height: 100vh;
+position: fixed;
+z-index: 1;
+left: -100%;
+transition: 850ms;
+background: #FFF;
+}
+.side.active{
+left: 0;
+transition: 350ms;
+}
+.home{
+    padding: 3% 5%;
+    min-height: 100vh;
+}
+.home-info{
+/* border: 1px solid red; */
+margin-top: 4%;
+}
+/* .home-info h1{
+font-size: 3vw;
+} */
+.home-card__container .card{
+width: 40%;
+}
+
+/*------------About Us----------------*/
+.about{
+    padding: 3% 5%;
+    min-height: 100vh;
+}
+.about-info{
+    width: 50%;
+}
+
+.about-image{
+    width: 45%;
+}
+.about-image .img{
+    width: 90%;
+    height: 450px;
+}
+
+/*----------books-----------*/
+.book{
+    padding: 3% 5%;
+    min-height: 100vh;
+}
+
+.books-container .card{
+    width: 22%;
+    height: auto;
+    padding: 12px;
+}
+
+
+.books-container .card .img{
+    width: 100%;
+    height: 200px;
+}
+
+/*----------signin------------*/
+.account{
+    padding: 3% 5%;
+    min-height: 100vh; 
+    background: #101115
+}
+.signin-info{
+    width: 45%;
+}
+.signin-image{
+    width: 45%;
+}
+
+.signin-image .img{
+    width: 100%;
+    height: 480px;
+    
+}
+
+
+
+@media only screen and (min-width: 769px){
+.menu-bar{
+display: none;
+}
+}
+@media only screen and (max-width: 768px) {
+    /* .home{
+        height: 100%;
+    } */
+.home h1{
+font-size: 30px;
+}
+.menu{
+display: none;
+}
+.menu-btn{
+display: none;
+}
+.side-btns button{
+width: 100%;
+padding: 12px 24px;
+}
+.home-card__container .card{
+width: 80%;
+}
+
+.about-info{
+    width: 100%;
+}
+
+.about-image{
+    width: 100%;
+}
+.books-container .card{
+    width: 46%;
+    height: auto;
+    padding: 12px;
+}
+.signin-info{
+    width: 100%;
+    order: 2;
+}
+.signin-image{
+    width: 100%;
+    order: 1;
+}
+}
+

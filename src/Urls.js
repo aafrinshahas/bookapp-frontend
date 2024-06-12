@@ -1,0 +1,1 @@
+export const baseUrl = 'https://bookapp-backend-h5k0.onrender.com'

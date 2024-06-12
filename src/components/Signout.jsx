@@ -7,7 +7,7 @@ import axios from "axios";
 import { baseUrl } from "../Urls";
 
 function Signout(){
-    const {username, password, confrimPass, handleUsername, handlePassword, handleConfrimpPass, checkValue, setcheckValue, checkPass, setcheckPass} = useContext(bookContext)
+    const {username, setUsername, password, setPassword, confrimPass, setConfrimPass, handleUsername, handlePassword, checkValue, setcheckValue, setcheckPass} = useContext(bookContext)
 
     const navigate = useNavigate();
     const addUser = () => {
@@ -17,8 +17,12 @@ function Signout(){
             console.log(result)
             if(result.data == 'success'){
              alert('User is already register, Please go to sign in page for login')
-             
+             navigate('/signout')
+             setUsername('')
+             setPassword('')
+             setConfrimPass('')
             }else{
+                alert('Register Successfully')
                 navigate("/dashboard")
 
             }
@@ -26,16 +30,6 @@ function Signout(){
           }).catch(err => console.log(err))
                if(username !== '' && password !== ''){
             console.log('value entered')
-            if(password == confrimPass && confrimPass !== ''){
-                console.log('matched')
-                setcheckPass(true)
-                navigate("/dashboard")
-            }
-            else{
-                console.log('not matched')
-                setcheckPass(false)
-                navigate("/signout")
-            }
             setcheckValue(true)
           }
           else{
@@ -81,8 +75,8 @@ function Signout(){
                 <div className="form flex flex-col gap-5 py-4">
                     <input placeholder="Enter your username" className='bg-transparent border border-[#673EDE] px-3 py-2 rounded-lg placeholder:text-slate-200 outline-none' onChange={handleUsername} value={username}/>
                     <input type='password' placeholder="Enter your password" className='bg-transparent border border-[#673EDE] px-3 py-2 rounded-lg placeholder:text-slate-200 outline-none' onChange={handlePassword} value={password}/>
-                    <input type="password" placeholder="Enter your confrim password" className='bg-transparent border border-[#673EDE] px-3 py-2 rounded-lg placeholder:text-slate-200 outline-none' onChange={handleConfrimpPass} value={confrimPass}/>
-                    {checkPass?'': <p className="text-red-500">Password mismatched</p>}
+                    {/* <input type="password" placeholder="Enter your confrim password" className='bg-transparent border border-[#673EDE] px-3 py-2 rounded-lg placeholder:text-slate-200 outline-none' onChange={handleConfrimpPass} value={confrimPass}/> */}
+                    {/* {checkPass?'': <p className="text-red-500">Password mismatched</p>} */}
                 {checkValue?'':<p className="text-red-500">Please enter sign up details</p>}
                     <div className="btns pt-4">
                     <button className="bg-[#673EDE] rounded-xl" onClick={addUser}>Join Now</button>
